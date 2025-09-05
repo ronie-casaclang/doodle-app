@@ -7,40 +7,51 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <RelativeLayout
+    <!-- Custom Drawing View -->
+    <com.casa.doodleapp.DrawingView
+        android:id="@+id/drawingView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="#FFFFFF" />
 
-        <!-- Custom Drawing View -->
-        <com.casa.doodleapp.DrawingView
-            android:id="@+id/drawingView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#FFFFFF" />
+    <!-- Buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent">
 
-        <!-- Clear Button -->
         <Button
-            android:id="@+id/clearBtn"
+            android:id="@+id/btnClear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Clear"
             android:backgroundTint="#ff0000"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="16dp"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="32dp"/>
+            android:text="Clear" />
 
-        <!-- Show Button -->
+        <Button
+            android:id="@+id/btnUndo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:backgroundTint="#6B6B6B"
+            android:text="Undo" />
+
+        <Button
+            android:id="@+id/btnRedo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:backgroundTint="#6B6B6B"
+            android:text="Redo" />
+
         <Button
             android:id="@+id/btnShow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Show Text"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="16dp"
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="32dp"/>
-    </RelativeLayout>
-
+            android:layout_marginLeft="16dp"
+            android:backgroundTint="#006DC1"
+            android:text="Learn the Word" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

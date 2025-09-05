@@ -18,7 +18,7 @@ import com.google.mlkit.vision.digitalink.*;
 public class MainActivity extends AppCompatActivity {
 
     private DrawingView drawingView;
-    private Button clearBtn, btnShow;
+    private Button btnClear, btnShow, btnUndo, btnRedo;
     private DigitalInkRecognizer recognizer;
 
     @Override
@@ -34,14 +34,23 @@ public class MainActivity extends AppCompatActivity {
 
         // Initialize
         drawingView = findViewById(R.id.drawingView);
-        clearBtn = findViewById(R.id.clearBtn);
+        btnClear = findViewById(R.id.btnClear);
+        btnUndo = findViewById(R.id.btnUndo);
+        btnRedo = findViewById(R.id.btnRedo);
         btnShow = findViewById(R.id.btnShow);
 
         // Initialize
         setupRecognizer();
 
         // Clear doodle
-        clearBtn.setOnClickListener(v -> drawingView.clear());
+        btnClear.setOnClickListener(v -> drawingView.clear());
+
+        // Undo/Redo
+        btnUndo.setOnClickListener(v -> drawingView.undo());
+        btnRedo.setOnClickListener(v -> drawingView.redo());
+
+        // Clear doodle
+        btnClear.setOnClickListener(v -> drawingView.clear());
 
         // Show recognized text
         btnShow.setOnClickListener(v -> recognizeInk());
