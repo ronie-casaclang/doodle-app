@@ -1,5 +1,6 @@
 package com.casa.doodleapp;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.Toast;
@@ -19,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
     private DrawingView drawingView;
     private Button btnClear, btnShow, btnUndo, btnRedo;
+    Button btnRed, btnBlack, btnBlue;
     private DigitalInkRecognizer recognizer;
 
     @Override
@@ -38,6 +40,9 @@ public class MainActivity extends AppCompatActivity {
         btnUndo = findViewById(R.id.btnUndo);
         btnRedo = findViewById(R.id.btnRedo);
         btnShow = findViewById(R.id.btnShow);
+        btnRed = findViewById(R.id.btnRed);
+        btnBlack = findViewById(R.id.btnBlack);
+        btnBlue = findViewById(R.id.btnBlue);
 
         // Initialize
         setupRecognizer();
@@ -54,6 +59,11 @@ public class MainActivity extends AppCompatActivity {
 
         // Show recognized text
         btnShow.setOnClickListener(v -> recognizeInk());
+
+        // Colors
+        btnRed.setOnClickListener(v -> drawingView.setPenColor(Color.RED));
+        btnBlue.setOnClickListener(v -> drawingView.setPenColor(Color.BLUE));
+        btnBlack.setOnClickListener(v -> drawingView.setPenColor(Color.BLACK));
     }
 
 

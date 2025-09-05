@@ -14,7 +14,42 @@
         android:layout_height="match_parent"
         android:background="#FFFFFF" />
 
-    <!-- Buttons -->
+    <!-- Buttons Control -->
+    <LinearLayout
+        android:id="@+id/colorButtonsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/btnRed"
+            android:layout_width="35dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="10dp"
+            android:backgroundTint="@android:color/holo_red_dark"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/btnBlack"
+            android:layout_width="35dp"
+            android:layout_height="40dp"
+            android:backgroundTint="@android:color/black"
+            android:layout_marginStart="10dp"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/btnBlue"
+            android:layout_width="35dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="10dp"
+            android:backgroundTint="@android:color/holo_blue_dark"
+            android:textColor="@android:color/white" />
+
+    </LinearLayout>
+
+    <!-- Buttons Control -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

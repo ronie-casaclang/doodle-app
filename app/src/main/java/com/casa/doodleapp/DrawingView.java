@@ -127,4 +127,8 @@ public class DrawingView extends View {
         }
         return inkBuilder.build();
     }
+
+    public void setPenColor(int color) {
+        paint.setColor(color);
+    }
 }
